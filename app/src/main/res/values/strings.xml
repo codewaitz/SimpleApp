@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">SimpleApp</string>
+    <!--refresh-->
+    <string name="refresh_pre">Release to Refresh</string>
+    <string name="refresh_ing">Loading...</string>
+    <string name="refresh_end">Refresh Successfully</string>
+    <string name="refresh_no_more">No More Data</string>
+    <!-- exception -->
+    <string name="exception_connection">Server Connection Failure</string>
+    <string name="exception_timeout">Request Times Out</string>
+    <string name="exception_unknown">Unknown Exception</string>
+    <string name="exception_net">Network Exception</string>
+    <string name="exception_code">Internal Code Error, Please Contact Administrator</string>
+    <!-- environment -->
+    <string name="environment">Environment</string>
+    <string name="environment_local">Local</string>
+    <string name="environment_debug">Debug</string>
+    <string name="environment_release">Release</string>
+    <string name="save">Save</string>
+    <string name="select_time_title">Select Time</string>
+</resources>

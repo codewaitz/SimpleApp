@@ -1,0 +1,65 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
+}
+android {
+    compileSdk build_versions.compile_sdk
+
+    defaultConfig {
+        applicationId build_versions.applicaionid
+        minSdk build_versions.min_sdk
+        targetSdk build_versions.target_sdk
+        versionCode build_versions.app_version_code
+        versionName build_versions.app_version_name
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    /**
+    signingConfigs {
+        release {
+            keyAlias '000000'
+            keyPassword '000000'
+            storeFile file('/keystore/000000.jks')
+            storePassword '000000'
+        }
+        debug {
+            keyAlias '000000'
+            keyPassword '000000'
+            storeFile file('/keystore/000000.jks')
+            storePassword '000000'
+        }
+    }*/
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    buildFeatures {
+        viewBinding true
+    }
+    sourceSets {
+        main {
+            res {
+                srcDirs 'src\\main\\res', 'src\\main\\res\\anim'
+            }
+        }
+    }
+}
+
+dependencies {
+    // common
+    implementation "com.github.codewaitz:XCommon:${versions.xcommon}"
+}
+

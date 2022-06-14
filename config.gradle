@@ -1,0 +1,55 @@
+/**
+ * 依赖库版本管理
+ */
+def versions = [:]
+versions.xcommon = "0.2.1"
+ext.versions = versions
+
+/**
+ * APP版本号、插件版本、编译相关版本管理
+ */
+def build_versions = [:]
+build_versions.android_gradle_plugin = "7.1.2"
+build_versions.kotlin = '1.6.0'
+build_versions.gmap_gradle_plugin = '2.0.0'
+build_versions.compile_sdk = 32
+build_versions.min_sdk = 21
+build_versions.target_sdk = 32
+build_versions.app_version_code = 100
+build_versions.app_version_name = "1.0.0"
+build_versions.applicaionid = "com.simple.app"
+ext.build_versions = build_versions
+
+/**
+ * 仓库地址管理
+ */
+def addRepos(RepositoryHandler handler) {
+    handler.maven {
+        allowInsecureProtocol true
+        url 'http://maven.aliyun.com/nexus/content/groups/public/'
+    }
+    handler.maven {
+        allowInsecureProtocol true
+        url 'http://maven.aliyun.com/repository/google/'
+    }
+    handler.maven {
+        allowInsecureProtocol true
+        url 'https://maven.aliyun.com/repository/jcenter/'
+    }
+    handler.maven {
+        allowInsecureProtocol true
+        url 'https://maven.aliyun.com/repository/public/'
+    }
+    handler.maven {
+        allowInsecureProtocol true
+        url 'https://jitpack.io'
+    }
+    handler.maven {
+        allowInsecureProtocol true
+        url 'https://s01.oss.sonatype.org/content/groups/public'
+    }
+    handler.mavenCentral()
+    handler.google()
+}
+
+ext.addRepos = this.&addRepos
